@@ -1,0 +1,26 @@
+{% extends "update/base.html" %}
+
+{% block title %} Update project in the web {% endblock %}
+
+{% block content %}
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Server Name</th>
+			<th>Server IP</th>
+			<th>App Name</th>
+		</tr>
+	</thead>
+	<tbody>
+	{% for server in servers %}
+	<tr>
+    <td>{{ forloop.counter }}</td>
+	<td>{{ server }}</td>
+	<td>Ip</td>
+	<td><button class="btn btn-primary">Deploy</button></td>
+	</tr>
+	{% endfor %}
+	</tbody>
+</table>
+{% endblock %}

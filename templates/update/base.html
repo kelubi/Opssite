@@ -1,0 +1,39 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html lang="en">
+<head>
+<link href="http://ops.buzzinate.com/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://ops.buzzinate.com/static/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+<link href="http://ops.buzzinate.com/staticd/css/base.css" rel="stylesheet">
+
+    {% block header %}
+    {% endblock %}
+
+</head>
+<body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="/"><img alt="Logo_buzzinate_top" src="http://ops.buzzinate.com/static/pic/logo_buzzinate_top.gif" /></a>
+          <div class="container nav-collapse">
+            <ul class="nav" style="padding-top: 30px;">
+              <li><a href="/bshare">bshare</a></li>
+              <li><a href="/lezhi">lezhi</a></li>
+              <li><a href="/ads">ads</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    {% block content %}{% endblock %}
+    {% block footer %}
+    <hr>
+    <p>Thanks for visiting my site.</p>
+    {% endblock %}
+</body>
+</html>
