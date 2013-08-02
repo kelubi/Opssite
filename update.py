@@ -10,8 +10,8 @@ def project_update(request,projectName):
 	template_name = "update/%s.html" % projectName
 	return render_to_response(template_name, {'servers':servers})
 
-from django.db import models
-from opssite.models import VirtualServer
+#from django.db import models
+from ops_platform.models import WebServer
 def get_servers():
 	servers_list = VirtualServer.objects.all()
 	print servers_list
