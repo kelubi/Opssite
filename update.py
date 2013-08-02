@@ -6,9 +6,6 @@ def project_update(request,projectName):
 	if projectName not in project_list:
 		print "[ERROR] no %s project." % projectName
 		sys.exit()
-
 	servers = ('button1','button2','button3')
-    phtml = "update/%s.html" % projectName
-    return render_to_response(phtml, {'servers':servers})
-
-
+	phtml = "update/%s.html" % projectName
+	return render_to_response(phtml, {'servers':servers})
