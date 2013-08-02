@@ -10,7 +10,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     (r'^hello/$', views.hello),
     (r'^update/(.*)/$', update.project_update),
-    (r'^archive/$', views.archive),
+#    (r'^archive/$', views.archive),
 #    (r'^search-form/$', views.search_form),
 #    (r'^search/$', views.search),
 #    (r'^contact/$', views.contact),
