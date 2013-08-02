@@ -1,5 +1,5 @@
 from django.shortcuts import render_to_response
-import sys datetime
+import sys,datetime
 
 def project_update(request,projectName):
 	project_list = ('bshare','lezhi','ads')
