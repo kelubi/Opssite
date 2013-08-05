@@ -18,6 +18,6 @@ def project_update(request,projectName):
 	if projectName not in project_list:
 		print "[ERROR] no %s project." % projectName
 		sys.exit()
-	servers,app = get_servers(projectName)
+	servers,apps = get_servers(projectName)
 	template_name = "update/%s.html" % projectName
-	return render_to_response(template_name, {'servers':servers,'app':app})
+	return render_to_response(template_name, {'servers':servers,'apps':apps})

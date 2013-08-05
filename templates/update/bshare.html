@@ -13,10 +13,12 @@
 		</tr>
 	</thead>
 	<tbody>
-	{% for server in servers %}
+	{% for app in apps %}
 	<tr>
     <td>{{ forloop.counter }}</td>
-	<td>{{ server }}</td>
+	<td>{{ app }}</td>
+	<td>{{ app.source_dir }}</td>
+	<td>{{ servers.app }}</td>
 	<td>Ip</td>
 	<td><button class="btn btn-primary">Deploy</button></td>
 	</tr>
