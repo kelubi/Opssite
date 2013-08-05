@@ -7,9 +7,9 @@
 	<thead>
 		<tr>
 			<th>#</th>
-			<th>Server Name</th>
-			<th>Server IP</th>
-			<th>App Name</th>
+			<th>App mame</th>
+			<th>App source</th>
+			<th>App hosts</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -18,11 +18,31 @@
     <td>{{ forloop.counter }}</td>
 	<td>{{ app }}</td>
 	<td>{{ app.source_dir }}</td>
-	<td>{{ servers.app }}</td>
-	<td>Ip</td>
+	<td>
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>Host Name</th>
+				<th>Host Ip</th>
+			</tr>
+		</thead>
+		<tbody>
+		{% for host in servers %}
+		<tr>
+	    <td>{{ forloop.counter }}</td>
+		<td>{{ host }}</td>
+		<td>{{ host.ip }}</td>
+		</tr>
+		{% endfor %}
+		</tbody>
+	</table>
+	</td>
 	<td><button class="btn btn-primary">Deploy</button></td>
 	</tr>
 	{% endfor %}
 	</tbody>
 </table>
 {% endblock %}
+
+
