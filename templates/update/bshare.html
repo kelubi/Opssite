@@ -17,8 +17,8 @@
 	<tr>
     <td>{{ forloop.counter }}</td>
 	<td>{{ app }}</td>
-	<td>{{ apps.app.update_dir }}</td>
-	<td>{{ servers.app.web1.ip }}</td>
+	<td>{{ apps.{{ app }}.update_dir }}</td>
+	<td>{{ servers.{{ app }}.web1.ip }}</td>
 	<td><button class="btn btn-primary">Deploy</button></td>
 	</tr>
 	{% endfor %}
