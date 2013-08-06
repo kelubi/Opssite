@@ -8,8 +8,6 @@
 		<tr>
 			<th>#</th>
 			<th>App Name</th>
-			<th>{{ apps.static.source_dir }}</th>
-			<th>{{ servers.static.web1.ip }}</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -17,8 +15,6 @@
 	<tr>
     <td>{{ forloop.counter }}</td>
 	<td>{{ app }}</td>
-	<td>{{ apps.app.update_dir }}</td>
-	<td></td>
 	<td><button class="btn btn-primary">Deploy</button></td>
 	</tr>
 	{% endfor %}
