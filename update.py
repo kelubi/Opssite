@@ -8,16 +8,18 @@ def get_project():
 	from serverlists.projectlist import Projectlist
 	return Projectlist
 
-def get_servers(projectName):
-	impstr = 'from serverlists.%s import Hostlist,Applist' % projectName
-	exec(impstr)
-	return Hostlist,Applist
-
-def project_update(request,projectName):
+def get_apps(request,ProjectName):
 	project_list = get_project()
-	if projectName not in project_list:
-		print "[ERROR] no %s project." % projectName
+	if ProjectName not in project_list:
+		print "[ERROR] no %s project." % ProjectName
 		sys.exit()
-	servers,apps = get_servers(projectName)
-	template_name = "update/%s.html" % projectName
+	impstr = 'from serverlists.%s import Applist' % ProjectName
+	exec(impstr)
+	template_name = "update/%s.html" % ProjectName
+	return render_to_response(template_name, {'apps':apps})
+
+def get_servers(request,ProjectName,AppName):
+	impstr = 'from serverlists.%s import Hostlist,Applist' % ProjectName
+	exec(impstr)
+	template_name = "update/%s/%s.html" % (ProjectName,AppName)
 	return render_to_response(template_name, {'servers':servers,'apps':apps})
